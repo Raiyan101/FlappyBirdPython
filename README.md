@@ -10,7 +10,8 @@ Use this command to install Pygame (after Python Is Installed):
 ```pip install pygame``` 
 
 You can change the difficulty of the game by changing the movement of the bird or the length of the pipes
-You can customise the game by using the extra pictures and sounds that are given
+
+You can customise the game by using the extra pictures and sounds that are given or adding your own
 
 Picture of the game: https://ibb.co/n1b9mh6
 
