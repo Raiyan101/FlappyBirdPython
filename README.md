@@ -9,6 +9,11 @@ Requirements to run this project:
 Use this command to install Pygame (after Python Is Installed):
 ```pip install pygame``` 
 
-*This project still needs improvements and features*
+You can change the difficulty of the game by changing the movement of the bird or the length of the pipes
+You can customise the game by using the extra pictures and sounds that are given
 
 Picture of the game: https://ibb.co/n1b9mh6
+
+*This project still needs improvements and features and is undergoing construction!*
+
+
