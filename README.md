@@ -1,5 +1,8 @@
 # FlappyBirdPython
 This is a Flappy Bird clone written in Python using Pygame
+
+This is a submission for CWF Fall 2020: https://codewithfriends.io/events/cwf-fall-2020/
+
 Requirements to run this project:
 
 1. Install Python 3.X
