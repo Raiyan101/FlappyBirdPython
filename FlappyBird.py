@@ -36,13 +36,16 @@ def draw_pipes(pipes):
 
 
 def check_collision(pipes):
+    global can_score
     for pipe in pipes:
         if bird_rect.colliderect(pipe):
             death_sound.play()
+            can_score = True
             return False
 
     if bird_rect.top <= -50 or bird_rect.bottom >= 450:
         death_sound.play()
+        can_score = True
         return False
     return True
 
@@ -82,8 +85,19 @@ def update_score(score, high_score):
     return high_score
 
 
-# Creating a game screen/window, initializing pygame and making clock variable for FPS
+def pipe_score_check():
+    global score, can_score
+    if pipe_list:
+        for pipe in pipe_list:
+            if 48 < pipe.centerx < 52 and can_score:
+                score += 1
+                score_update_sound.play()
+                can_score = False
+            if pipe.centerx < 0:
+                can_score = True
 
+
+                # Creating a game screen/window, initializing pygame and making clock variable for FPS
 WIDTH = 288
 HEIGHT = 512
 pygame.mixer.pre_init(frequency=44100, size=16, channels=1, buffer=512)
@@ -101,6 +115,7 @@ bird_movement = 0
 game_active = True
 score = 0
 high_score = 0
+can_score = True
 
 
 # Background image import
@@ -193,12 +208,10 @@ while True:
         pipe_list == move_pipes(pipe_list)
         draw_pipes(pipe_list)
 
-        score += 0.008
+        # Score
+
+        pipe_score_check()
         score_display('main_game')
-        score_sound_countdown -= 1
-        if score_sound_countdown <= 0:
-            score_update_sound.play()
-            score_sound_countdown = 125
 
     else:
         screen.blit(gameover_surface, gameover_rect)
