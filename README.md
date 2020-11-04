@@ -18,6 +18,6 @@ You can customise the game by using the extra pictures and sounds that are given
 
 Picture of the game: https://ibb.co/n1b9mh6
 
-*This project still needs improvements and features and is undergoing construction!*
+*This project still needs improvements and features and new fixes are being added*
 
 
